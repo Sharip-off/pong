@@ -4,7 +4,8 @@ from ball import Ball
 import time
 
 screen = Screen()
-screen.screensize(800, 600, "black")
+screen.setup(width=800, height=600)
+screen.bgcolor("black")
 screen.title("Pong")
 screen.tracer(0)
 
@@ -21,9 +22,8 @@ screen.onkey(user_paddle.go_down, "Down")
 
 game_is_on = True
 while game_is_on:
-    screen.update()
     time.sleep(0.1)
-    
+    screen.update()
     ball.move()
 
 screen.exitonclick()

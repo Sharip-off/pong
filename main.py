@@ -9,8 +9,8 @@ screen.title("Pong")
 screen.tracer(0)
 
 
-user_paddle = Paddle((450, 0))
-ps_paddle = Paddle((-450, 0))
+user_paddle = Paddle((350, 0))
+ps_paddle = Paddle((-350, 0))
 ball = Ball()
 
 

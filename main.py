@@ -10,15 +10,15 @@ screen.title("Pong")
 screen.tracer(0)
 
 
-user_paddle = Paddle((350, 0))
-ps_paddle = Paddle((-350, 0))
+r_paddle = Paddle((350, 0))
+l_paddle = Paddle((-350, 0))
 ball = Ball()
 
 
 screen.listen()
 
-screen.onkey(user_paddle.go_up, "Up")
-screen.onkey(user_paddle.go_down, "Down")
+screen.onkey(r_paddle.go_up, "Up")
+screen.onkey(r_paddle.go_down, "Down")
 
 game_is_on = True
 while game_is_on:
@@ -28,8 +28,10 @@ while game_is_on:
 
     #Detect collision with wall
     if ball.ycor() > 300 or ball.ycor() < -300:
-        ball.bounce()
-    
+        ball.bounce_y()
+    #Collision with right r_paddle
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 340:
+        ball.bounce_x()
 
 
 screen.exitonclick()
